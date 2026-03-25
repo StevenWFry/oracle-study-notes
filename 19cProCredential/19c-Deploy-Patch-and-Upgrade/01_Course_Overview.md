@@ -18,11 +18,16 @@ By the end of this lesson, you should be able to:
 - Lesson 4 - Root Privileges, OS Preparation, and Instance Configuration
 - Lesson 5 - Storage Options for Oracle Database and Oracle ASM
 - Lesson 6 - Preparing to Install Oracle Software
-- Lesson 7 - Installing Oracle Grid Infrastructure for a Standalone Server
-- Lesson 8 - Installing Oracle Database Software and Creating the Oracle Database
-- Lesson 9 - Patching Grid Infrastructure and Database Software
-- Lesson 10 - Upgrading Grid Infrastructure and Database Software
-- Lesson 11 - Post-Upgrade Tasks and Data Pump Migration
+- Lesson 7 - Installing Oracle Grid Infrastructure for a Standalone Server and Managing Oracle Restart
+- Lesson 8 - Installing Oracle Database Software
+- Lesson 9 - Creating the Oracle Database
+- Lesson 10 - Patching Grid Infrastructure and Database Software
+- Lesson 11 - Upgrading Oracle Grid Infrastructure to 19c
+- Lesson 12 - Choosing Oracle Database Upgrade Methods and Data Migration
+- Lesson 13 - Upgrading Oracle Database to 19c with AutoUpgrade
+- Lesson 14 - Upgrading Oracle Database with DBUA and Manual Methods
+- Lesson 15 - Post-Upgrade Tasks for Oracle Database
+- Lesson 16 - Migrating to Oracle Database 19c Using Data Pump
 
 ---
 
