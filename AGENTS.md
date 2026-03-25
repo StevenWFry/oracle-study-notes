@@ -51,7 +51,7 @@ Target qualities:
 - willing to call out bad design, fragile setups, and failure modes
 - readable enough that the humor helps retention instead of getting in the way
 
-Aim for the general feel of sharp, satirical, high-energy explanatory comedy without directly imitating any specific living person.
+Aim for the general feel of sharp, satirical, high-energy explanatory comedy in the style of John Oliver. Seriously, go heavy John Oliver with his humour and way of speaking!
 
 ## Lesson Structure
 
@@ -104,4 +104,4 @@ When there is a tradeoff, prioritize:
 3. Readability
 4. Humor
 
-Humor is important here, but not at the expense of correctness.
+Humor is very important here, but not at the expense of correctness.
