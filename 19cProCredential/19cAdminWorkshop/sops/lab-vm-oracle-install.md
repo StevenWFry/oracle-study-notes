@@ -348,22 +348,67 @@ REGIONS
 
 ## Part 8 — Optional: Install SQL Developer
 
+### 8.1 Install JDK 17
+
+SQL Developer requires JDK 17 or higher. The RPM download does not include it.
+
 ```bash
-# Install Java
-sudo dnf install -y java-11-openjdk
-
-# Download SQL Developer from:
-# https://www.oracle.com/tools/downloads/sqldev-downloads.html
-# Get the "Other Platforms" zip (no JDK included)
-
-unzip sqldeveloper-*.zip -d /opt/
-sudo ln -s /opt/sqldeveloper/sqldeveloper.sh /usr/local/bin/sqldeveloper
-
-# Run it
-sqldeveloper &
+sudo dnf install -y java-17-openjdk
 ```
 
-Connection settings for SQL Developer:
+Find the installed JDK path — you will need it when SQL Developer first launches:
+
+```bash
+dirname $(dirname $(readlink -f $(which java)))
+# Typical output: /usr/lib/jvm/java-17-openjdk-17.x.x.x.el8.x86_64
+# Copy this path — SQL Developer will ask for it on first run
+```
+
+### 8.2 Download the SQL Developer RPM
+
+Go to: **https://www.oracle.com/tools/downloads/sqldev-downloads.html**
+
+Select the **noarch RPM** (no JDK included — you just installed one):
+`sqldeveloper-24.x.x-x.noarch.rpm`
+
+Transfer it to your VM.
+
+### 8.3 Install the RPM
+
+```bash
+sudo rpm -Uhv sqldeveloper-24.3.1-347.1826.noarch.rpm
+```
+
+### 8.4 Launch SQL Developer
+
+The RPM version auto-detects the system default Java. If Java 11 is the system default, SQL Developer will find it, fail the version check, and exit. Override it with `JAVA_HOME` before launching:
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.19.0.10-1.0.1.el8.x86_64
+cd /opt/sqldeveloper
+./sqldeveloper.sh
+```
+
+> Replace the version string with whatever `ls /usr/lib/jvm/` shows for your java-17 directory.
+
+### 8.5 Make JAVA_HOME Permanent
+
+Add it to `~/.bash_profile` so every new shell picks it up:
+
+```bash
+echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.19.0.10-1.0.1.el8.x86_64' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+### 8.6 Optional: Create a Launch Shortcut
+
+```bash
+sudo ln -s /opt/sqldeveloper/sqldeveloper.sh /usr/local/bin/sqldeveloper
+```
+
+Then you can launch it from anywhere with just `sqldeveloper &`.
+
+### 8.6 Connection Settings
 
 | Field | Value |
 |-------|-------|
